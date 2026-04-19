@@ -28,3 +28,42 @@ public class TodoListSimples {
                 scanner.nextLine();
                 continue;
             }
+
+            // Estrutura de decisão para as ações
+            switch (opcao) {
+                case 1:
+                    System.out.print("Digite a tarefa: ");
+                    String novaTarefa = scanner.nextLine();
+                    tarefas.add(novaTarefa);
+                    System.out.println("Tarefa adicionada!");
+                    break;
+                case 2:
+                    System.out.println("\n--- Lista de Tarefas ---");
+                    if (tarefas.isEmpty()) {
+                        System.out.println("Nenhuma tarefa cadastrada.");
+                    } else {
+                        for (int i = 0; i < tarefas.size(); i++) {
+                            System.out.println((i + 1) + ". " + tarefas.get(i));
+                        }
+                    }
+                    break;
+                case 3:
+                    System.out.print("Digite o número da tarefa a remover: ");
+                    int indice = scanner.nextInt() - 1;
+                    if (indice >= 0 && indice < tarefas.size()) {
+                        tarefas.remove(indice);
+                        System.out.println("Tarefa removida!");
+                    } else {
+                        System.out.println("Índice inválido.");
+                    }
+                    break;
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        }
+        scanner.close();
+    }
+}
