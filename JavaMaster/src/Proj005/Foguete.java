@@ -6,7 +6,7 @@ class Foguete {
     private int combustivel;
 
     // Construtor: usado para criar o objeto
-    public Foguete(String nome, int combustivelInicial) {
+        public Foguete(String nome, int combustivelInicial) {
         this.nome = nome;
         this.velocidade = 0; // Inicia parado
         this.combustivel = combustivelInicial;
